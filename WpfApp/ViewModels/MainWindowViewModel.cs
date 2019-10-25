@@ -6,9 +6,9 @@ namespace WpfApp.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        private ItemManager FoodManager { get; } = new ItemManager();
+        private ItemManager ItemManager { get; } = new ItemManager();
 
-        public ObservableCollection<Category> Categories => FoodManager.Categories;
+        public ObservableCollection<Category> Categories => ItemManager.Categories;
 
         private Item? _selectedItem;
         public Item? SelectedItem
