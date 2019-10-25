@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp.Views"
         xmlns:viewModels="clr-namespace:WpfApp.ViewModels"
+        xmlns:xaml="clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost"
+        xmlns:wrapper="clr-namespace:WpfApp.Wrapper"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.DataContext>
@@ -15,7 +17,11 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <local:ItemsTreeView SelectionChanged="ItemsTreeView_SelectionChanged" />
-        <local:ContentItemView Grid.Column="1" />
+        <!--<xaml:WindowsXamlHost InitialTypeName="UWPApp.Controls.UwpItemsTreeView" ChildChanged="UwpItemTreeViewHost_ChildChanged" />
+        <xaml:WindowsXamlHost InitialTypeName="UWPApp.Controls.UwpContentItemView" ChildChanged="UwpContentItemView_ChildChanged" Grid.Column="1" />-->
+        <!--<local:ItemsTreeView SelectionChanged="ItemsTreeView_SelectionChanged" />
+        <local:ContentItemView Grid.Column="1" />-->
+        <wrapper:UWPItemsTreeView SelectionChanged="ItemsTreeView_SelectionChanged" />
+        <wrapper:UwpContentItemView Grid.Column="1" />
     </Grid>
 </Window>

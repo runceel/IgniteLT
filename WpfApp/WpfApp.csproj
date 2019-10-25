@@ -7,15 +7,25 @@
     <Nullable>enable</Nullable>
     <Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
-
+  <PropertyGroup>
+    <AssetTargetFallback>uap10.0.18362</AssetTargetFallback>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Toolkit.Wpf.UI.Controls" Version="6.0.0-preview9.1" />
     <PackageReference Include="Prism.Core" Version="7.2.0.1367" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\UWPApp.Controls\UWPApp.Controls.vbproj" />
+    <Content Include="..\UWPApp\bin\$(Platform)\$(Configuration)\NoiseAsset_256x256_PNG.png" LinkBase="Microsoft.UI.Xaml\Assets">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UWPApp.Controls\UWPApp.Controls.csproj" />
     <ProjectReference Include="..\UWPApp\UWPApp.csproj" />
+    <ProjectReference Include="..\WpfApp.Models\WpfApp.Models.csproj" />
   </ItemGroup>
 
 </Project>

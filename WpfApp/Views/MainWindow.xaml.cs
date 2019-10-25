@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using Microsoft.Toolkit.Wpf.UI.XamlHost;
+using System.Windows;
+using UWPApp.Controls;
 using WpfApp.Models;
 using WpfApp.ViewModels;
 
@@ -17,6 +19,28 @@ namespace WpfApp.Views
         private void ItemsTreeView_SelectionChanged(object sender, TreeViewSelectionChangedEventArgs e)
         {
             ((MainWindowViewModel)DataContext).SelectedItem = e.SelectedItem as Item;
+        }
+
+        private void UwpItemTreeViewHost_ChildChanged(object sender, System.EventArgs e)
+        {
+            var host = (WindowsXamlHost)sender;
+            if (host.Child is UwpItemsTreeView treeView)
+            {
+                treeView.DataContext = DataContext;
+                treeView.SelectionChanged += (_, args) =>
+                {
+                    ((MainWindowViewModel)DataContext).SelectedItem = args.SelectedItem as Item;
+                };
+            }
+        }
+
+        private void UwpContentItemView_ChildChanged(object sender, System.EventArgs e)
+        {
+            var host = (WindowsXamlHost)sender;
+            if (host.Child is UwpContentItemView itemView)
+            {
+                itemView.DataContext = DataContext;
+            }
         }
     }
 }
