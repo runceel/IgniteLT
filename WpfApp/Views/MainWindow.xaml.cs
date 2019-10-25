@@ -1,7 +1,5 @@
 ﻿using Microsoft.Toolkit.Wpf.UI.XamlHost;
-using System;
 using System.Windows;
-using System.Windows.Controls;
 using UWPApp.Controls;
 using WpfApp.Models;
 using WpfApp.ViewModels;

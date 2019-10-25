@@ -1,7 +1,5 @@
 ﻿using Microsoft.Toolkit.Wpf.UI.XamlHost;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using UWPControl = UWPApp.Controls.UwpContentItemView;
 
 namespace WpfApp.Wrapper

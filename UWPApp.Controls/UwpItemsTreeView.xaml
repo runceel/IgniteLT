@@ -17,9 +17,9 @@
                     <DataTemplate x:DataType="models:Item">
                         <winui:TreeViewItem>
                             <TextBlock>
-                            <Run Text="{x:Bind Name, Mode=OneWay}" />
-                            <Run Text=": " />
-                            <Run Text="{x:Bind Emoji, Mode=OneWay}" />
+                                <Run Text="{x:Bind Name, Mode=OneWay}" />
+                                <Run Text=": " />
+                                <Run Text="{x:Bind Emoji, Mode=OneWay}" />
                             </TextBlock>
                         </winui:TreeViewItem>
                     </DataTemplate>
@@ -32,7 +32,7 @@
             </local:TreeViewItemTemplateSelector>
             
             <ResourceDictionary.MergedDictionaries>
-                    <ResourceDictionary Source="ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml" />
+                <ResourceDictionary Source="ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>

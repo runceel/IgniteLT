@@ -1,7 +1,5 @@
 ﻿using Microsoft.Toolkit.Wpf.UI.XamlHost;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using WpfApp.Views;
 using UWPControl = UWPApp.Controls.UwpItemsTreeView;
 
